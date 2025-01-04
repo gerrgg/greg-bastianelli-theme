@@ -7,14 +7,26 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <header>
-    <h1><?php bloginfo( 'name' ); ?></h1>
-    <p><?php bloginfo( 'description' ); ?></p>
-    <button id="darkModeToggle">Dark Mode</button>
-  </header>
+  <?php get_header() ?>
 
   <main>
-    <p>Welcome to my custom theme!!!</p> 
+    <?php
+    // The WordPress Loop to display posts
+    if ( have_posts() ) :
+      while ( have_posts() ) : the_post();
+        ?>
+        <article>
+          <h2><?php the_title(); ?></h2>
+          <div>
+            <?php the_content(); ?>
+          </div>
+        </article>
+        <?php
+      endwhile;
+    else :
+      echo '<p>No posts found</p>';
+    endif;
+    ?>
   </main>
 
   <?php wp_footer(); ?>

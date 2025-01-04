@@ -1,0 +1,166 @@
+/* _reset.scss */
+
+/* Box sizing border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+h1, h2, h3, h4, h5, h6,
+p, ul, ol, dl, figure,
+blockquote,
+pre, code,
+table,
+fieldset,
+input, select, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set line-height to 1.5 for better readability */
+body {
+  line-height: 1.5;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Set up consistent list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove blockquotes indentation */
+blockquote {
+  quotes: none;
+  padding-left: 1em;
+  border-left: 3px solid #ccc;
+}
+
+/* Remove the border from fieldsets */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Typography reset */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+/* Text decoration reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+/* Remove background color on focus for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.3);
+}
+
+/* Set images to responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Avoid large whitespace below images in inline-block context */
+img,
+video {
+  display: inline-block;
+}
+
+/* Add some basic focus styles for accessibility */
+:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* Remove default appearance for input[type="checkbox"], input[type="radio"] */
+input[type="checkbox"],
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 50%;
+}
+
+/* Fix the appearance of buttons in some browsers */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Prevent form elements from inheriting styles from other form elements */
+form {
+  display: block;
+}
+
+/* Prevent text selection highlighting */
+::selection {
+  background-color: #b3d4fc;
+  color: #000;
+}

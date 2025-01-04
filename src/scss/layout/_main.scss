@@ -1,0 +1,35 @@
+@use "../base/variables";
+
+body{
+    background: variables.$color-background;
+    color: variables.$color-text;
+
+    &.dark-mode{
+        background: variables.$color-dark-background;
+        color: variables.$color-dark-text;
+
+        h1,h2,h3,h4,h5,h6{
+            color: variables.$color-dark-border;
+        }
+
+        p{
+            color: variables.$color-dark-text;
+        }
+
+        header{
+            .wrap{
+                .logo-wrapper{
+                    svg{
+                        rect{
+                            stroke: variables.$color-dark-text;
+                        }
+        
+                        path{
+                            stroke: variables.$color-dark-border;
+                        }  
+                    }
+                }
+            }
+        }
+    }
+}

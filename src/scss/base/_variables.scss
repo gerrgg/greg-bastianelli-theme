@@ -1,0 +1,75 @@
+/* _variables.scss */
+
+/* Color Palette */
+$color-primary: #3498db;      // Main brand color (blue)
+$color-secondary: #2ecc71;    // Secondary color (green)
+$color-tertiary: #e74c3c;     // Tertiary color (red)
+$color-background: #f4f4f4;   // Background color (light gray)
+$color-text: #333333;         // Default text color
+$color-heading: #222222;      // Heading color (darker text)
+$color-muted: #7f8c8d;        // Muted text (gray)
+$color-border: #dcdcdc;       // Border color (light gray)
+$color-white: #ffffff;        // White color
+$color-black: #000000;        // Black color
+
+/* Dark Mode Colors */
+$color-dark-background: #1b050c;
+$color-dark-border: #eb6047;
+$color-dark-text: #cfaaa9;
+
+/* Font Families */
+$font-primary: "Fira Code", serif;   // Primary font (sans-serif)
+$font-secondary: "Fira Code", serif;   // Secondary font (serif)
+$font-mono: 'Courier New', monospace; // Monospace font for code
+
+/* Font Sizes */
+$font-size-base: 16px;      // Base font size
+$font-size-h1: 2.5rem;      // H1 size
+$font-size-h2: 2rem;        // H2 size
+$font-size-h3: 1.75rem;     // H3 size
+$font-size-h4: 1.5rem;      // H4 size
+$font-size-h5: 1.25rem;     // H5 size
+$font-size-h6: 1rem;        // H6 size
+$font-size-small: 0.875rem; // Small text size
+
+/* Line Heights */
+$line-height-base: 1.5;        // Default line height for text
+$line-height-heading: 1.2;     // Line height for headings
+$line-height-small: 1.4;       // Line height for smaller text
+
+/* Spacing */
+$space-xs: 8px;     // Extra small spacing
+$space-sm: 16px;    // Small spacing
+$space-md: 24px;    // Medium spacing
+$space-lg: 32px;    // Large spacing
+$space-xl: 48px;    // Extra large spacing
+
+/* Border Radius */
+$border-radius-sm: 4px;  // Small border radius
+$border-radius-md: 8px;  // Medium border radius
+$border-radius-lg: 12px; // Large border radius
+
+/* Box Shadows */
+$box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);  // Light shadow
+$box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2); // Medium shadow
+$box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.3);   // Dark shadow
+
+/* Z-Index */
+$z-index-dropdown: 1000; // Z-index for dropdowns
+$z-index-modal: 1050;    // Z-index for modals
+$z-index-tooltip: 1100;  // Z-index for tooltips
+
+/* Transition */
+$transition-fast: all 0.2s ease;    // Fast transition (for hover effects)
+$transition-medium: all 0.3s ease;  // Medium transition
+$transition-slow: all 0.4s ease;     // Slow transition
+
+/* Breakpoints (for responsive design) */
+$breakpoint-xs: 480px;   // Extra small devices (phones)
+$breakpoint-sm: 768px;   // Small devices (tablets)
+$breakpoint-md: 1024px;  // Medium devices (laptops)
+$breakpoint-lg: 1200px;  // Large devices (desktops)
+
+/* Miscellaneous */
+$max-width: 1200px;      // Maximum width for content
+$max-width-container: 1140px; // Max width for containers

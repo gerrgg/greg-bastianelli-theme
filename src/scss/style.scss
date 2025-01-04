@@ -1,8 +1,5 @@
-body {
-  background: white;
-
-  &.dark-mode {
-    background-color: #000000;
-    color: #ffffff;
-  }
-}
+@use 'base/variables';
+@use 'base/reset';
+@use 'base/typography';
+@use 'layout/main';
+@use 'layout/header';

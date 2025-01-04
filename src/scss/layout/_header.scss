@@ -40,7 +40,7 @@ header{
     .wrap{
         display: flex;
         align-items: center;
-        border-bottom: 3px solid variables.$color-light-text;
+        // border-bottom: 3px solid variables.$color-light-text;
         padding-bottom: 1rem;
 
         .logo-wrapper{
@@ -80,10 +80,10 @@ header{
         }
         
         .right-menu-wrapper{
-            
             nav{
                 border-radius: 40px;
                 overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
             }
 
             ul{
@@ -116,7 +116,7 @@ body.dark-mode{
     header{
         
         .wrap{
-            border-bottom: 5px solid variables.$color-dark-text;
+            // border-bottom: 5px solid variables.$color-dark-text;
 
 
             .logo-wrapper{

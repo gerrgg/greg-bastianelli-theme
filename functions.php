@@ -1,4 +1,5 @@
 <?php
+require_once 'helpers.php';
 
 function greg_bastianelli_enqueue_scripts() {
     wp_enqueue_style('theme-style', get_template_directory_uri() . '/assets/css/style.css');

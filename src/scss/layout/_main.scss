@@ -1,8 +1,8 @@
 @use "../base/variables";
 
 body{
-    background: variables.$color-background;
-    color: variables.$color-text;
+    background: variables.$color-light-background;
+    color: variables.$color-light-text;
 
     &.dark-mode{
         background: variables.$color-dark-background;
@@ -16,20 +16,6 @@ body{
             color: variables.$color-dark-text;
         }
 
-        header{
-            .wrap{
-                .logo-wrapper{
-                    svg{
-                        rect{
-                            stroke: variables.$color-dark-text;
-                        }
         
-                        path{
-                            stroke: variables.$color-dark-border;
-                        }  
-                    }
-                }
-            }
-        }
     }
 }

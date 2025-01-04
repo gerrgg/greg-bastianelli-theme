@@ -40,6 +40,8 @@ header{
     .wrap{
         display: flex;
         align-items: center;
+        border-bottom: 3px solid variables.$color-light-text;
+        padding-bottom: 1rem;
 
         .logo-wrapper{
             display: flex;
@@ -80,24 +82,29 @@ header{
         .right-menu-wrapper{
             
             nav{
-                border-radius: 24px;
-                background: variables.$color-light-border;
+                border-radius: 40px;
+                overflow: hidden;
             }
 
             ul{
                 display: flex;
-                gap: 2rem;
                 align-items: center;
-                padding: 0.5rem 2rem;
-
+                
                 li{
                     color: variables.$color-light-background;
+                    background: variables.$color-light-border;
                     font-weight: bold;
 
+                    &:hover{
+                        background: variables.$color-light-text;
+                    }
+
                     a{
+                        padding: 0.5rem 3rem;
                         text-transform: uppercase;
                         font-family: variables.$font-secondary;
-                        font-size: 1.5rem;
+                        font-size: 1.75rem;
+                        display: block;
                     }
                 }
             }
@@ -107,7 +114,11 @@ header{
 
 body.dark-mode{
     header{
+        
         .wrap{
+            border-bottom: 5px solid variables.$color-dark-text;
+
+
             .logo-wrapper{
                 h1{
                     color: variables.$color-dark-border;
@@ -120,6 +131,18 @@ body.dark-mode{
                     path{
                         stroke: variables.$color-dark-border;
                     }  
+                }
+            }
+
+            .right-menu-wrapper{
+                nav{
+                    li{
+                        background: variables.$color-dark-border;
+
+                        &:hover{
+                            background: variables.$color-dark-text;
+                        }
+                    }
                 }
             }
         }

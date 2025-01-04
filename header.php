@@ -17,9 +17,20 @@
                 <path d="m3.25 14.25h3m-3-4.5h1.5v4"/>
             </svg>
         </div>
+        <div class="right-menu-wrapper">
+            <?php
+                wp_nav_menu([
+                    'theme_location' => 'main-menu', // Matches the location registered in functions.php
+                    'container' => 'nav',              // Wrap the menu in a <nav> element
+                    'container_class' => 'main-nav',   // Add a class to the <nav> element
+                    'menu_class' => 'menu',            // Add a class to the <ul> element
+                    'fallback_cb' => false,            // Disable the default fallback menu
+                ]);
+            ?>
+        </div>
     </div>
     <button id="darkModeToggle">Dark Mode</button>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
 </header>

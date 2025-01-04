@@ -10,10 +10,11 @@
   <header>
     <h1><?php bloginfo( 'name' ); ?></h1>
     <p><?php bloginfo( 'description' ); ?></p>
+    <button id="darkModeToggle">Dark Mode</button>
   </header>
 
   <main>
-    <p>Welcome to my custom theme!!!</p>
+    <p>Welcome to my custom theme!!!</p> 
   </main>
 
   <?php wp_footer(); ?>

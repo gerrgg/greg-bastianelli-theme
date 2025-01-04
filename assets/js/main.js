@@ -1,1 +1,1 @@
-console.log("test");
+document.addEventListener("DOMContentLoaded",function(){let d=document.body;var e=localStorage.getItem("darkMode");e?"enabled"===e&&d.classList.add("dark-mode"):window.matchMedia("(prefers-color-scheme: dark)").matches&&d.classList.add("dark-mode"),document.getElementById("darkModeToggle").addEventListener("click",()=>{d.classList.toggle("dark-mode");var e=d.classList.contains("dark-mode")?"enabled":"disabled";localStorage.setItem("darkMode",e)})});

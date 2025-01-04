@@ -10,12 +10,12 @@ const browserSync = require('browser-sync').create();
 const paths = {
   styles: {
     src: './src/scss/**/*.scss',
-    dest: './assets/css',
+    dest: './assets/css'
   },
   scripts: {
     src: './src/js/**/*.js',
-    dest: './assets/js',
-  },
+    dest: './assets/js'
+  }
 };
 
 // Compile SCSS
@@ -44,7 +44,7 @@ function watch() {
   browserSync.init({
     proxy: 'http://localhost:10003/', // Your custom local development URL
     open: true, // Automatically open the browser
-    notify: false, // Disable BrowserSync notifications in the browser
+    notify: false // Disable BrowserSync notifications in the browser
   });
 
   gulp.watch(paths.styles.src, styles);

@@ -1,3 +1,8 @@
-body{
-    background: red;
+body {
+  background: white;
+
+  &.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+  }
 }

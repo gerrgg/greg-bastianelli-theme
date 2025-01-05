@@ -1,8 +1,10 @@
 @use "../base/variables";
 
 header{
-    position: relative;
+    position: fixed;
+    width: 100%;
     padding: 1rem 2rem;
+    top: 0;
 
     #darkModeToggle{
         position: absolute;
@@ -44,10 +46,14 @@ header{
         padding-bottom: 1rem;
 
         .logo-wrapper{
-            display: flex;
-            gap: 5px;
             margin-right: auto;
-            align-items: center;
+            
+            a{
+                display: flex;
+                gap: 5px;
+                align-items: end;
+                flex-direction: column;
+            }
             
             .text-wrapper{
                 max-width: 300px;
@@ -60,15 +66,21 @@ header{
                     font-weight: bold;
                     margin: 0;
                     color: variables.$color-light-border;
+                    font-family: variables.$font-secondary;
+                    font-size: 2.5rem;
                 }
     
                 p.tagline{
-                    text-transform: uppercase;
+                    // text-transform: uppercase;
                     margin: 0;
+                    font-family: variables.$font-fancy;
+                    font-size: 1.1rem;
                 }
             }
             
             svg{
+                display: none;
+
                 rect{
                     stroke: variables.$color-light-text;
                 }
@@ -141,6 +153,7 @@ body.dark-mode{
 
                         &:hover{
                             background: variables.$color-dark-text;
+                            color: variables.$color-dark-background;
                         }
                     }
                 }

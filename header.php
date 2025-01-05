@@ -5,19 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php wp_title(); ?></title>
   <?php wp_head(); ?>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Borel&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body <?php body_class(); ?>>
 <header>
     <div class="wrap">
         <div class="logo-wrapper">
             <div class="text-wrapper">
-                <h1 class="name"><?php bloginfo( 'name' ); ?></h1>
-                <p class="tagline">
-                    <?php
-                        echo Date('Y') . '&nbsp;'; 
-                        bloginfo( 'description' ); 
-                    ?>
-                </p>
+                <a href="/">
+                    <h1 class="name"><?php bloginfo( 'name' ); ?></h1>
+                    <p class="tagline">
+                        <?php
+                            echo Date('Y') . '&nbsp;'; 
+                            bloginfo( 'description' ); 
+                        ?>
+                    </p>
+                </a>
             </div>
             <svg width="64px" height="64px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                 <rect height="4.5" width="3" y="1.75" x="3.25"/>
@@ -39,7 +44,5 @@
         </div>
     </div>
     <button id="darkModeToggle">Dark Mode</button>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
+    
 </header>

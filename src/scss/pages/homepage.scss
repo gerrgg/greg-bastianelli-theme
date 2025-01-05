@@ -1,9 +1,71 @@
-#homepage{
-    .hero{
-        height: 100vh;
-        width: 100vw;
+@use "../base/variables";
 
-        .image-wrapper{
+body.dark-mode{
+    #homepage{
+        .hero{
+            &::after{
+                border-left: 80vw solid variables.$color-dark-border;
+            }
+
+            .content--left{
+                h1{
+                    color: variables.$color-dark-text;
+                }
+
+                h2{
+                    color: variables.$color-dark-border;
+                }
+            }
+
+            .content--head{
+                .head-wrapper{
+                    .image-wrapper{
+                        border: 5px solid variables.$color-dark-border;
+                    }
+                }
+                .chat-bubble{
+                    .inner{
+                        background: variables.$color-light-background;
+
+                        p{
+                            color: variables.$color-light-text;
+                        }
+
+                        &::after{
+                            border-right: 50px solid variables.$color-dark-border;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#homepage{
+    overflow: hidden;
+    padding-top: 112px;
+    box-sizing: border-box;
+    
+    .hero{
+        height: calc(100vh - 112px);
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 80vw solid variables.$color-light-border;
+            border-right: 50vw solid transparent;
+            border-top: 100px solid transparent /* Adjust height and color */
+        }
+
+        .image-wrapper.background{
             opacity: 0.7;
             position: absolute;
             top: 0;
@@ -21,5 +83,102 @@
                 object-fit: cover;
             }
         }
+
+        .wrap{
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+
+            .content--left{
+                max-width: 500px;
+                padding-bottom: 250px;
+
+                h1{
+                    font-family: variables.$font-secondary;
+                    font-size: 4rem;
+                    color: variables.$color-light-text;
+                    padding-bottom: 1.5rem;
+                }
+
+                h2{
+                    font-family: variables.$font-fancy;
+                    font-size: 3rem;
+                    color: variables.$color-light-border;
+                    font-weight: bold;
+                }
+
+                p{
+                    font-size: 1.35rem;
+                }
+            }
+
+
+            .content--head{
+                max-width: 650px;
+                margin-left: auto;
+                margin-top: -100px;
+
+                .head-wrapper{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: flex-end;
+                }
+
+                .image-wrapper{
+                    height: 150px;
+                    width: 150px;
+                    display: flex;
+                    border: 5px solid variables.$color-light-border;
+                    border-radius: 100%;
+                    flex-shrink: 0;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+              0 1px 3px rgba(0, 0, 0, 0.06);
+
+                    img{
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 100%;
+                        object-position: top;
+                    }
+                }
+
+                .chat-bubble{
+                    padding-bottom: 122px;
+
+                    .inner{
+                        padding: 2rem;
+                        background: variables.$color-dark-background;
+                        border-radius: 20px;
+                        position: relative;
+                         /* Box shadow for depth */
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                        0 1px 3px rgba(0, 0, 0, 0.06);
+
+                        &::after{
+                            content: "";
+                            border-left: 50px solid transparent;
+                            border-right: 50px solid variables.$color-light-border;
+                            border-top: 50px solid transparent;
+                            position: absolute;
+                            bottom: -10px;
+                            right: -10px;
+                            z-index: 1;
+                        }
+
+                        p{
+                            color: variables.$color-dark-text;
+                            font-size: 1.75rem;
+                            font-family: variables.$font-primary;
+                        }
+                    }
+                }
+            }
+
+        }
     }
 }
+
+

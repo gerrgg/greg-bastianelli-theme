@@ -55,6 +55,34 @@ body.dark-mode{
                 border-left-color: variables.$color-dark-background;
             }
         }
+
+        .principles{
+            .wrap .content--left{
+                h2{
+                    border-color: variables.$color-dark-border;
+                }
+
+                *{
+                    color: variables.$color-light-background;
+                }
+            }
+
+            .wrap .content--repeater .content-wrapper{
+                border-color: variables.$color-dark-text;
+
+                *{
+                    color: variables.$color-light-background;
+                }
+            }
+
+            .svg-container.svg--light{
+                display: none;
+            }
+
+            .svg-container.svg--dark{
+                display: block;
+            }
+        }
     }
 }
 
@@ -69,8 +97,6 @@ body.dark-mode{
         overflow: hidden;
         display: flex;
         align-items: flex-end;
-        
-        
 
         .image-wrapper.background{
             opacity: 0.7;
@@ -92,12 +118,6 @@ body.dark-mode{
         }
 
         .wrap{
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-
             .content--left{
                 max-width: 500px;
                 padding-bottom: 250px;
@@ -107,26 +127,29 @@ body.dark-mode{
                     font-size: 4rem;
                     color: variables.$color-light-text;
                     padding-bottom: 1.5rem;
+                    text-align: right;
                 }
 
                 h2{
                     font-family: variables.$font-fancy;
-                    font-size: 3rem;
+                    font-size: 2rem;
+                    text-align: right;
                     color: variables.$color-light-border;
                     font-weight: bold;
                 }
 
                 p{
                     font-size: 1.35rem;
-                    padding-left: 40px;
+                    padding-right: 40px;
                     position: relative;
+                    text-align: right;
                     &::after{
                         content: "";
                         height: 92%;
                         width: 10px;
                         background: variables.$color-light-border;
                         position: absolute;
-                        left: 0; 
+                        right: 0; 
                         top: 50%;
                         transform: translateY(-50%);
                     }
@@ -153,7 +176,8 @@ body.dark-mode{
                     border-radius: 100%;
                     flex-shrink: 0;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
-
+                    margin-left: -2rem;
+                    
                     img{
                         object-fit: cover;
                         height: 100%;
@@ -250,6 +274,76 @@ body.dark-mode{
                 font-size: 1.5rem;
                 font-weight: bold;
                 position: relative;
+            }
+        }
+    }
+
+    .principles{
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        .svg-container{
+            margin-top: -300px;
+            margin-left: 5rem;
+            width: 500px;
+            // margin-left: auto;
+
+            &.svg--dark{
+                display: none;
+            }
+
+            svg{
+                width: 100%;
+            }
+        }
+
+        .wrap{
+            .content--left{
+                text-align: right;
+                margin-right: 9rem;
+                flex-shrink: 0;
+
+                h2{
+                    padding-top: 2rem;
+                    padding-bottom: 1rem;
+                    border-bottom: 5px solid variables.$color-light-border;
+                    margin-bottom: 1rem;
+                    font-size: 4rem;
+                    font-family: variables.$font-secondary;
+                }
+
+                h3{
+                    margin-top: 2rem;
+                    font-family: variables.$font-fancy;
+                }
+            }
+
+            .content--repeater{
+                display: flex;
+                gap: 2rem;
+                max-width: 1250px;
+                margin: 0 auto;
+
+
+                h3{
+                    margin-bottom: 1rem;
+                }
+
+                .content-wrapper{
+                    padding-bottom: 2rem;
+                    padding-top: 2rem;
+                    border-bottom: 5px solid variables.$color-light-border;
+                    border-top: 5px solid variables.$color-light-border;
+                    width: 100%;
+
+                    h3{
+                        font-size: 1.75rem;
+                        font-weight: bold;
+                    }
+                    p{
+                        font-size: 1.25rem;
+                    }
+                }
             }
         }
     }

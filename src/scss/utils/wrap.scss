@@ -1,6 +1,6 @@
 .wrap{
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0rem 2rem;
     display: flex;
@@ -12,6 +12,9 @@
 
     &--xl{
         max-width: 100%;
-        padding: 0rem 2rem;
+    }
+
+    &--md{
+        max-width: 1440px;
     }
 }

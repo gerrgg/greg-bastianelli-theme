@@ -1,10 +1,24 @@
 @use "../base/variables";
 
+body.home{
+    header{
+        .logo-wrapper{
+            display: none;
+        }
+    }
+}
+
+/* Header Small Styles - For when the header goes in small moode */
+body.small header .right-menu-wrapper{
+    width: 68px;
+}
+
 header{
     position: fixed;
     width: 100%;
     padding: 1rem 2rem;
     top: 0;
+    z-index: 10;
 
     #darkModeToggle{
         position: absolute;
@@ -92,6 +106,25 @@ header{
         }
         
         .right-menu-wrapper{
+            margin-left: auto;
+            position: relative;
+
+            #menu-expand{
+                position: absolute;
+                right: 5px;
+                top: calc(50% + 4px);
+                transform: translateY(-50%);
+
+                svg{
+                    width: 48px;
+                    height: 48px;
+    
+                    path{
+                        color: variables.$color-light-background;
+                    }
+                }
+            }
+
             nav{
                 border-radius: 40px;
                 overflow: hidden;
@@ -108,6 +141,9 @@ header{
                     background: variables.$color-light-border;
                     font-weight: bold;
 
+                    &:last-of-type{
+                        padding-right: 40px;
+                    }
 
                     &.current-menu-item {
                         background: variables.$color-light-text;

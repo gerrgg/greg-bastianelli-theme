@@ -10,6 +10,9 @@ $content_left = $hero['content_left'];
 $headshot = $hero['headshot'];
 $headshot_blurb = $hero['headshot_blurb'];
 
+$introduction = get_field('introduction', $post);
+$introduction_image = $introduction['image'] ?? false;
+$introduction_content = $introduction['content'] ?? false;
 ?>
 
 <div id="homepage" class="homepage">
@@ -31,6 +34,23 @@ $headshot_blurb = $hero['headshot_blurb'];
                     ?>
                 </div>
             
+            </div>
+        </div>
+    </div>
+    <div class="introduction">
+        <div class="wrap wrap--xl">
+            <div class="content content--image">
+                <?php 
+                    _render_terminal_art();
+                ?>
+                
+            </div>
+            <div class="content content--left">
+                <?php 
+                    if($introduction_content){
+                        echo $introduction_content;
+                    }
+                ?>
             </div>
         </div>
     </div>

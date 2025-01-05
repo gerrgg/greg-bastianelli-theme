@@ -15,6 +15,10 @@ body.dark-mode{
                 h2{
                     color: variables.$color-dark-border;
                 }
+
+                p::after{
+                    background: variables.$color-dark-border;
+                }
             }
 
             .content--head{
@@ -24,8 +28,10 @@ body.dark-mode{
                     }
                 }
                 .chat-bubble{
+                    
                     .inner{
                         background: variables.$color-light-background;
+                        border-color: variables.$color-dark-border;
 
                         p{
                             color: variables.$color-light-text;
@@ -36,6 +42,17 @@ body.dark-mode{
                         }
                     }
                 }
+            }
+        }
+
+        .introduction{
+            background: variables.$color-dark-border;
+            &::after{
+                border-left-color: variables.$color-dark-border;
+            }
+
+            &::before{
+                border-left-color: variables.$color-dark-background;
             }
         }
     }
@@ -53,17 +70,7 @@ body.dark-mode{
         display: flex;
         align-items: flex-end;
         
-        &::after{
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 80vw solid variables.$color-light-border;
-            border-right: 50vw solid transparent;
-            border-top: 100px solid transparent /* Adjust height and color */
-        }
+        
 
         .image-wrapper.background{
             opacity: 0.7;
@@ -111,6 +118,18 @@ body.dark-mode{
 
                 p{
                     font-size: 1.35rem;
+                    padding-left: 40px;
+                    position: relative;
+                    &::after{
+                        content: "";
+                        height: 92%;
+                        width: 10px;
+                        background: variables.$color-light-border;
+                        position: absolute;
+                        left: 0; 
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
                 }
             }
 
@@ -133,8 +152,7 @@ body.dark-mode{
                     border: 5px solid variables.$color-light-border;
                     border-radius: 100%;
                     flex-shrink: 0;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
-              0 1px 3px rgba(0, 0, 0, 0.06);
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 
                     img{
                         object-fit: cover;
@@ -156,6 +174,7 @@ body.dark-mode{
                          /* Box shadow for depth */
                         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
                         0 1px 3px rgba(0, 0, 0, 0.06);
+                        border: 5px solid variables.$color-light-border;
 
                         &::after{
                             content: "";
@@ -177,6 +196,61 @@ body.dark-mode{
                 }
             }
 
+        }
+    }
+
+    .introduction{
+        background: variables.$color-light-border;
+        padding: 50px 0 170px;
+        position: relative;
+
+        .wrap{
+            max-width: 1440px;
+            align-items: center;
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100vw solid variables.$color-light-border;
+            border-right: 50vw solid transparent;
+            border-top: 100px solid transparent; /* Adjust height and color */
+            transform: translateY(-100%);
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100vw solid variables.$color-light-background;
+            border-right: 50vw solid transparent;
+            border-top: 100px solid transparent /* Adjust height and color */
+        }
+
+        .content--left{
+            padding-left: 4rem;
+            max-width: 550px;
+    
+            h2{
+                font-family: variables.$font-techno;
+                font-size: 3rem;
+                color: variables.$color-light-background;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+    
+            p{
+                font-size: 1.5rem;
+                font-weight: bold;
+                position: relative;
+            }
         }
     }
 }

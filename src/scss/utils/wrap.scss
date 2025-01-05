@@ -1,2 +1,17 @@
 .wrap{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0rem 2rem;
+    display: flex;
+
+    &--no-padding{
+        max-width: 100%;
+        padding: 0;
+    }
+
+    &--xl{
+        max-width: 100%;
+        padding: 0rem 2rem;
+    }
 }

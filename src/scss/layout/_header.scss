@@ -96,6 +96,7 @@ header{
                 border-radius: 40px;
                 overflow: hidden;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+                border: 5px solid variables.$color-light-border;
             }
 
             ul{
@@ -107,16 +108,22 @@ header{
                     background: variables.$color-light-border;
                     font-weight: bold;
 
+
+                    &.current-menu-item {
+                        background: variables.$color-light-text;
+                    }
+
                     &:hover{
                         background: variables.$color-light-text;
                     }
 
                     a{
-                        padding: 0.5rem 3rem;
+                        padding: 0.5rem 5rem;
                         text-transform: uppercase;
-                        font-family: variables.$font-secondary;
+                        font-family: variables.$font-primary;
                         font-size: 1.75rem;
                         display: block;
+                        letter-spacing: 0.10em;
                     }
                 }
             }
@@ -126,10 +133,8 @@ header{
 
 body.dark-mode{
     header{
-        
         .wrap{
             // border-bottom: 5px solid variables.$color-dark-text;
-
 
             .logo-wrapper{
                 h1{
@@ -148,8 +153,14 @@ body.dark-mode{
 
             .right-menu-wrapper{
                 nav{
+                    border: 5px solid variables.$color-dark-border;
                     li{
                         background: variables.$color-dark-border;
+
+                        &.current-menu-item {
+                            background: variables.$color-dark-text;
+                            color: variables.$color-dark-background;
+                        }
 
                         &:hover{
                             background: variables.$color-dark-text;

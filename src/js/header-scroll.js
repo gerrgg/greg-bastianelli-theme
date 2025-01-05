@@ -1,17 +1,23 @@
-let lastScrollTop = 0; // Store the last scroll position
+let lastScrollTop = 0; // Variable to track last scroll position
+const menuElement = document.querySelector('.right-menu-wrapper'); // Menu element to shrink/grow
 
 window.addEventListener('scroll', function() {
   const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
   const bodyElement = document.body; // Or you can target a specific element
-
+  
   if (currentScroll === 0) {
-    bodyElement.classList.remove('small'); // Remove 'small' when at the top
+    // When at the top, remove 'small' and animate menu back to full width
+    bodyElement.classList.remove('small');
+    gsap.to(menuElement, { width: '902px', duration: 0.5 });
   } else if (currentScroll > lastScrollTop) {
-    bodyElement.classList.add('small'); // Add 'small' when scrolling down
+    // When scrolling down, add 'small' and shrink the menu
+    bodyElement.classList.add('small');
+    gsap.to(menuElement, { width: '68px', duration: 0.5 });
   } else {
-    bodyElement.classList.remove('small'); // Remove 'small' when scrolling up
+    // When scrolling up, remove 'small' and animate menu back to full width
+    bodyElement.classList.remove('small');
+    gsap.to(menuElement, { width: '902px', duration: 0.5 });
   }
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Update the last scroll position
 });
-

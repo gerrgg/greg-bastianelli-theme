@@ -13,5 +13,10 @@ function greg_bastianelli_enqueue_scripts() {
     ]);
   }
   add_action('init', 'greg_bastianelli_register_menus');
+
+  function enqueue_gsap_script() {
+    wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js', array(), null, true);
+  }
+  add_action('wp_enqueue_scripts', 'enqueue_gsap_script');
   
   

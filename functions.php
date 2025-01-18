@@ -19,4 +19,4 @@ function greg_bastianelli_enqueue_scripts() {
   }
   add_action('wp_enqueue_scripts', 'enqueue_gsap_script');
   
-  
+    

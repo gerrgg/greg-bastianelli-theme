@@ -83,6 +83,41 @@ body.dark-mode{
                 display: block;
             }
         }
+
+        .journey-wrapper{
+            background: variables.$color-dark-border;
+
+            &::after{
+                border-left-color: variables.$color-dark-border;
+            }
+
+            &::before{
+                border-left-color: variables.$color-dark-background;
+            }
+
+            .content--left{
+                h2{
+                    color: variables.$color-light-background;
+                }
+
+                p{
+                    color: variables.$color-dark-background;
+                }
+            }
+
+            .content--repeater .std-content{
+                background: variables.$color-dark-background;
+                border-color: variables.$color-dark-text;
+
+                h2{
+                    color: variables.$color-dark-text;
+                }
+
+                p{
+                    color: variables.$color-dark-text;
+                }
+            }
+        }
     }
 }
 
@@ -343,6 +378,113 @@ body.dark-mode{
                     p{
                         font-size: 1.25rem;
                     }
+                }
+            }
+        }
+    }
+
+    .journey-wrapper{
+        background: variables.$color-light-border;
+        padding: 175px 0 300px 0;
+        position: relative;
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100vw solid variables.$color-light-border;
+            border-right: 50vw solid transparent;
+            border-top: 100px solid transparent; /* Adjust height and color */
+            transform: translateY(-100%);
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100vw solid variables.$color-light-background;
+            border-right: 50vw solid transparent;
+            border-top: 100px solid transparent /* Adjust height and color */
+        }
+
+        .sun--svg{
+            position: absolute;
+            top: -3rem;
+            left: 2rem;
+            width: 200px;
+            z-index: 1;
+            margin: 0 auto 50px;
+        }
+
+        .timeline--svg{
+            width: 100%;
+            position: absolute;
+            bottom: -100px;
+            right: 0;
+            left: 2rem;
+            z-index: 1;
+            display: flex;
+
+            svg{
+                margin-left: auto;
+                width: 500px;
+                height: 500px;
+            }
+        }
+
+        .content--left{
+            max-width: 500px;
+            padding-right: 5rem;
+
+            h2{
+                font-family: variables.$font-techno;
+                font-size: 3rem;
+                color: variables.$color-light-background;
+                font-weight: bold;
+                margin-bottom: 15px;
+                padding-top: 24px;
+            }
+
+            p{
+                font-size: 1.5rem;
+                font-weight: bold;
+                position: relative;
+            }
+        }
+
+        .content--repeater{
+            position: relative;
+            z-index: 1;
+            display: flex;
+            gap: 2rem;
+            max-width: 1250px;
+            margin: 0 auto;
+            flex-flow: row wrap;
+
+            .std-content{
+                background: variables.$color-light-background;
+                border-radius: 0px;
+                padding: 3rem 2rem;
+                border-bottom: 5px solid variables.$color-light-border;
+                border-top: 5px solid variables.$color-light-border;
+                width: 100%;
+                max-width: 550px;
+
+                h2{
+                    font-size: 1.75rem;
+                    font-weight: bold;
+                    margin-bottom: 1.5rem;
+                    font-family: variables.$font-primary;
+                }
+
+                p{
+                    font-size: 1.5rem;
                 }
             }
         }

@@ -46,6 +46,7 @@
             </button>
         </div>
     </div>
+                
     <button id="darkModeToggle">Dark Mode</button>
     
 </header>

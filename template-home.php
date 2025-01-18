@@ -5,23 +5,18 @@
 global $post;
 get_header();
 $hero = get_field('hero', $post);
-$background = $hero['background'] ?? false;
-$content_left = $hero['content_left'] ?? false;
-$headshot = $hero['headshot'] ?? false;
-$headshot_blurb = $hero['headshot_blurb'] ?? false;
-
 $introduction = get_field('introduction', $post);
-$introduction_image = $introduction['image'] ?? false;
-$introduction_content = $introduction['content'] ?? false;
-
 $principles = get_field('principles', $post);
-$principles_title = $principles['title'] ?? false;
-$principles_subtitle = $principles['subtitle'] ?? false;
-$principles_columns = $principles['columns'] ?? false;
-?>
+$journey = get_field('journey', $post);
 
-<div id="homepage" class="homepage">
-    <div class="hero">
+
+function _render_hero($data){
+    $background = $data['background'] ?? false;
+    $content_left = $data['content_left'] ?? false;
+    $headshot = $data['headshot'] ?? false;
+    $headshot_blurb = $data['headshot_blurb'] ?? false;
+    ?>
+        <div class="hero">
         <?php 
             _get_image_html($background, ['background']);
         ?>
@@ -38,10 +33,16 @@ $principles_columns = $principles['columns'] ?? false;
                         }
                     ?>
                 </div>
-            
             </div>
         </div>
     </div>
+    <?php
+}
+
+function _render_introduction($data){
+    $introduction_image = $data['image'] ?? false;
+    $introduction_content = $data['content'] ?? false;
+    ?>
     <div class="introduction">
         <div class="wrap wrap--md">
             <div class="content content--image">
@@ -59,6 +60,14 @@ $principles_columns = $principles['columns'] ?? false;
             </div>
         </div>
     </div>
+    <?php
+}
+
+function _render_principles($data){
+    $principles_title = $data['title'] ?? false;
+    $principles_subtitle = $data['subtitle'] ?? false;
+    $principles_columns = $data['columns'] ?? false;
+    ?>
     <div class="principles">
         <div class="wrap">
             <div class="content content--left">
@@ -92,6 +101,66 @@ $principles_columns = $principles['columns'] ?? false;
             <?php include('assets/svgs/enter-light.svg'); ?>
         </div>
     </div>
+    <?php
+}
+
+function _render_journey($data){
+    $title = $data['title'] ?? false;
+    $columns = $data['columns'] ?? false;
+    ?>
+    <div class="journey-wrapper">
+        
+        <div class="wrap wrap--bottom">
+            <div class="content content--left">
+                <div class="svg-container sun--svg svg--dark">
+                    <?php include('assets/svgs/sun-light.svg'); ?>
+                </div>
+                <?php 
+                    if( $title ){
+                        printf('<h2>%s</h2>', $title);
+                    }
+                ?>
+            </div>
+            <div class="content content--repeater">
+                <?php 
+                    if( $columns ){
+                        foreach( $columns as $column ){
+                            $headline = $column['headline'] ?? false;
+                            $short_description = $column['short_description'] ?? false;
+
+                            echo '<div class="std-content">';
+                                if($headline){
+                                    printf('<h2>%s</h2>', $headline);
+                                }
+                                if($short_description){
+                                    printf('<p>%s</p>', $short_description);
+                                }
+                            echo '</div>';
+                        }
+                    }
+                ?>
+            </div>
+        </div>
+
+            <div class="svg-container timeline--svg svg--dark">
+                <?php include('assets/svgs/human-evolution-light.svg'); ?>
+            </div>
+            
+    </div>
+    <?php
+}
+
+?>
+
+<div id="homepage" class="homepage">
+    <?php 
+        _render_hero($hero);
+        _render_introduction($introduction);
+        _render_principles($principles);
+        _render_journey($journey);
+    ?>
+    
+    
 </div>
 
 <?php 

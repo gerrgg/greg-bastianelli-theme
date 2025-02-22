@@ -79,6 +79,13 @@ function _render_principles($data){
                         printf('<h3>%s</h3>', $principles_subtitle);
                     }
                 ?>
+
+                <div class="svg-container svg--dark">
+                    <?php include('assets/svgs/enter-dark.svg'); ?>
+                </div>
+                <div class="svg-container svg--light">
+                    <?php include('assets/svgs/enter-light.svg'); ?>
+                </div>
             </div>
             <div class="content content--repeater">
                 <?php
@@ -93,13 +100,7 @@ function _render_principles($data){
                 ?>
             </div>
         </div>
-       
-        <div class="svg-container svg--dark">
-            <?php include('assets/svgs/enter-dark.svg'); ?>
-        </div>
-        <div class="svg-container svg--light">
-            <?php include('assets/svgs/enter-light.svg'); ?>
-        </div>
+        
     </div>
     <?php
 }
